@@ -3,7 +3,6 @@
   "extends": ["config:recommended"],
   "ignorePaths": [],
 
-  "onboarding": true,
 
   "prHourlyLimit": 2,
   "prConcurrentLimit": 6,
