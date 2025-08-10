@@ -4,5 +4,4 @@
   "enabledManagers": ["kubernetes"],
   "prHourlyLimit": 2,
   "prConcurrentLimit": 6,
-  "logLevel": "debug"
 }
