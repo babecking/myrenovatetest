@@ -1,3 +1,4 @@
+
 FROM node:22.18.0
 
 # Install app dependencies

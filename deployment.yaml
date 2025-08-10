@@ -1,0 +1,10 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-service
+spec:
+  template:
+    spec:
+      containers:
+        - name: my-service
+          image: busybox:1.35.0
