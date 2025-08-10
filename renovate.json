@@ -1,16 +1,8 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended"],
-  "ignorePaths": [],
-
-
+  "extends": ["config:base"],
+  "enabledManagers": ["kubernetes"],
   "prHourlyLimit": 2,
   "prConcurrentLimit": 6,
-  
-  "packageRules": [
-    {
-      "matchPackagePatterns": [".*"],
-      "enabled": true
-    }
-  ]
+  "logLevel": "debug"
 }
