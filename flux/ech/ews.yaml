@@ -1,0 +1,49 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: ews
+  namespace: app-private
+spec:
+  releaseName: ews
+  interval: 1m
+  chart:
+    spec:
+      chart: ews
+      version: 5.87.0
+      sourceRef:
+        kind: HelmRepository
+        name: registry-knb-nl-oci
+        namespace: infrastructure
+      interval: 1m
+  values:
+    baGateway:
+      oidc:
+        tokenUrl: https://idp-tst.knb.nl/auth/realms/knb/protocol/openid-connect/token
+    env:
+      ECH_URL_BASE: https://tst.ech.nl/
+      OIDC_AUTH_SERVER_URL: https://idp-tst.knb.nl/auth/
+    imagePullSecrets:
+    - registry-knb-nl
+    - registry-ci-knb-nl
+    initContainer:
+      enabled: true
+      image:
+        pullPolicy: IfNotPresent
+    jobs:
+      ech-notaris-overzicht-gegevens:
+        enabled: true
+      ech-opschonen-verkeersgegevens:
+        enabled: true
+      ech-opschonen-zaken:
+        enabled: true
+      ech-versturen-herinneringsmails:
+        enabled: true
+      ech-versturen-tikken:
+        enabled: true
+    maxUnavailable: 0
+    metrics:
+      jolokia: false
+    ports:
+      publishNodePorts: true
+    replicas: 1
+    repository: registry-ci.knb.nl/knb
