@@ -1,4 +1,4 @@
-FROM node:16.13.0
+FROM node:22.18.0
 
 # Install app dependencies
 WORKDIR /app
