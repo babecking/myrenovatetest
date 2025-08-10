@@ -3,5 +3,5 @@
   "extends": ["config:base"],
   "enabledManagers": ["kubernetes"],
   "prHourlyLimit": 2,
-  "prConcurrentLimit": 6,
+  "prConcurrentLimit": 6
 }
