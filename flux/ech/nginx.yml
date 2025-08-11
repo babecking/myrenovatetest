@@ -18,7 +18,7 @@ spec:
   chart:
     spec:
       chart: nginx-ingress-controller
-      version: "11.4.0"        # specify version or version range
+      version: "12.0.4"        # specify version or version range
       sourceRef:
         kind: HelmRepository
         name: bitnami
